@@ -1,0 +1,10 @@
+---
+- hosts : all
+  remote_user : ansible
+  become : yes
+  tasks :
+   - name : Remove wget
+     yum : name=wget state=absent
+   - name : Check wget status
+     command: service wget status     
+
