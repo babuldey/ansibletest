@@ -1,8 +1,10 @@
 ---
 - hosts : all
-  remote_user : ansible
+  remote_user : sysops
   become : yes
   tasks :
+   - name : Get hostname
+     shell: hostname
    - name : Remove wget
      yum : name=wget state=absent
    - name : Check wget status
